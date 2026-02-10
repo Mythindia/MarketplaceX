@@ -1,6 +1,6 @@
 # MarketplaceX - E-Commerce Application
 
-A clean, full-stack e-commerce application built for academic demonstration purposes.
+A clean, full-stack e-commerce application.
 
 ## Features
 
@@ -219,11 +219,11 @@ Frontend will run on `http://localhost:5173`
 
 ## Notes
 
-- This is a **demonstration application** for academic purposes
+- This is a **demonstration application**
 - The payment gateway is **dummy** and does not process real payments
 - Database is SQLite stored locally as `database.sqlite`
 - JWT secret should be changed in production
 
 ## License
 
-MIT License - Created for academic assignment demonstration
+MIT License
