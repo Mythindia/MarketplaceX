@@ -137,7 +137,28 @@ cd backend
 npm install
 ```
 
-3. Environment variables are already configured in `.env`
+3. Create and configure environment variables:
+
+Create a `.env` file in the `backend` directory:
+```bash
+# Server Configuration
+PORT=5000
+
+# JWT Secret Key - Keep this secret and secure!
+JWT_SECRET=your_super_secure_jwt_secret_key_change_this_in_production
+
+# Database Configuration
+DB_PATH=./database.sqlite
+```
+
+**Important**: Generate a secure JWT_SECRET for production:
+```bash
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+```
+
+Copy the generated string and replace the `JWT_SECRET` value in your `.env` file.
+
+**Security Note**: Never commit the `.env` file to version control. Add it to `.gitignore`.
 
 4. Seed the database with sample products:
 ```bash
@@ -146,7 +167,7 @@ npm run seed
 
 5. Start the backend server:
 ```bash
-npm run dev
+npm start
 ```
 
 Backend will run on `http://localhost:5000`
@@ -222,7 +243,8 @@ Frontend will run on `http://localhost:5173`
 - This is a **demonstration application**
 - The payment gateway is **dummy** and does not process real payments
 - Database is SQLite stored locally as `database.sqlite`
-- JWT secret should be changed in production
+- **Important**: Generate a secure JWT_SECRET before deploying to production (see Backend Setup step 3)
+- Never commit `.env` files to version control - use `.env.example` as a template
 
 ## License
 
